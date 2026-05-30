@@ -1,1 +1,17 @@
-<html>
+#!/bin/bash
+
+SERVER="142.250.183.174"
+
+
+echo "checking connectivity to $SERVER..."
+
+if ping -c 4 $SERVER > /dev/null 2>&1
+then
+
+	echo "$(date) - $SERVER is active" >> server_status.log
+	echo "$SERVER is active"
+
+else 
+	echo "$(date) - $SERVER is inactive" >> server_status.log
+	echo "$SERVER is inactive"
+fi
